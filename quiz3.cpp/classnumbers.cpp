@@ -22,24 +22,34 @@ class NUMBERS
   }
   int getID()
   {
-    cout << "the group ID is";
+    cout << "the group's ID is";
     return ID;
   }
-  int getSize() const;
+  int getSize(){
+    cout << "the group's size is"
+    return numbers.size();
+  }
 
-int getElm(int i) const;
+  int getElm(int i){
+    cout << "the requested element  is";
+    if (i> numbers.size()){
+      cout << "Try the numbers with in the range";
+    }
+    cin >> i;
+    return numbers[i];
+  }
 
-int getMax() const ;
+  int getMax() const ;
 
-int getMin() const;
+  int getMin() const;
 
-int getSum() const;
+  int getSum() const;
 
-void deleteElm(int d) ;
+  void deleteElm(int d) ;
 
-void addElm(int a) ;
+  void addElm(int a) ;
 
-void printAll( ) const;
+  void printAll( ) const;
 
 
 
