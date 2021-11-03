@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
+#include <vector>
 
 using namespace std;
 
@@ -73,13 +74,28 @@ class NUMBERS
     return total;
   }
 
-  void deleteElm(int d)
+  void deleteElm(int d){
+    for(iter=numbers.begin(); iter <numbers.end(); iter++)
+  }
 
-  void addElm(int a) ;
+  void addElm(int a){
+    numbers.push_back(rand() %99);
+  }
 
-  void printAll( ) const;
-
-
-
+  void printAll( ){
+    for (int i = 0; i < numbers.size(); i++){
+      cout << numbers[i] <<"";
+    }
+  }
   
+  int main()
+  {
+    NUMBERS numberset [ ] = {numbers(1,3), numbers(2,5), numbers(3,10), numbers(4,5), numbers(5, 3) };
+
+    numberset[0].printAll();  
+    numberset[1].printAll();
+    numberset[2].printAll();
+    numberset[3].printAll();
+    numberset[4].printAll();
+  }
 }
