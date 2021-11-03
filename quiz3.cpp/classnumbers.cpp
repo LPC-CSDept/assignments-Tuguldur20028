@@ -75,7 +75,7 @@ class NUMBERS
   }
 
   void deleteElm(int d){
-    for(iter=numbers.begin(); iter <numbers.end(); iter++)
+    numbers.erase(numbers.begin() +d);
   }
 
   void addElm(int a){
