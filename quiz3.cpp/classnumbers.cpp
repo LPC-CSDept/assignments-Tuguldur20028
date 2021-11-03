@@ -12,6 +12,13 @@ class NUMBERS
   NUMBERS(){
     ID = -1;
   }
-  Numbers(int designation, int groupSize)
+  NUMBERS(int designation, int groupSize)
+  {
+    ID = designation;
+    for (int i = 0; i < groupSize; i++)
+    {
+      numbers.push_back(rand() %99);
+    }
+  }
 
 }
