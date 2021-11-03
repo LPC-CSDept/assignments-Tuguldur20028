@@ -65,10 +65,15 @@ class NUMBERS
   }
 
   int getSum(){
-    
+    int total;
+    for (int i = 0; i < numbers.size(); i++){
+      total = numbers[i];
+      total += total;
+    }
+    return total;
   }
 
-  void deleteElm(int d) ;
+  void deleteElm(int d)
 
   void addElm(int a) ;
 
