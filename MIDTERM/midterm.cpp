@@ -125,3 +125,50 @@ void binarySearch(Student array[], int N, int target)
   int mid;
   int last = N; 
   int result;
+    while(first <= last && !found){
+    mid = (first + last) / 2;
+
+    if(target > array[mid].getID()){
+      first = mid + 1;
+    }
+    else if(target < array[mid].getID()){
+      last = mid - 1;
+    }
+    else {
+      found = true;
+      result = mid;
+    }
+    cout << "Result: "<< mid << " ";
+  } 
+
+  cout << array[mid];
+  
+  if(!found){
+    result = -1;
+  }
+}
+
+void bubbleSortbyScores(Student E[], int N){
+  for(int i = 0; i < N; i++){
+    for(int q = 0; q < N; q++){
+      Student temp;
+      if(E[i].getTotalSum() > E[q].getTotalSum()){
+        temp = E[i];
+        E[i] = E[q];
+        E[q] = temp;
+      }
+    }
+  }
+}
+void bubbleSortbyID(Student E[], int N){
+  for(int i = 0; i < N; i++){
+    for(int q = 0; q < N; q++){
+      Student temp;
+      if(E[i].getID() < E[q].getID()){
+        temp = E[i];
+        E[i] = E[q];
+        E[q] = temp;
+      }
+    }
+  }
+}
