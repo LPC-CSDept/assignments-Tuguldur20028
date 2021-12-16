@@ -45,3 +45,37 @@ int main() {
 
   fstream FILE_IN;
   Course lessons[10];
+  int selection;
+  cout << "Please choose the file to search: " << endl;
+  cout << "1. classcourse.txt" << endl;
+  cout << "2. classcourse2.txt" << endl;
+  cout << "3. classcourse3.txt" << endl;
+  cout << endl;
+  cout << "Search file: ";
+  cin >> selection;
+
+  cout << endl;
+
+  switch(selection){
+    case 1: fileName = "FINAL/classcourse.txt";
+            cout << "Searching classcourse.txt" << endl;
+            break;
+    case 2: fileName = "FINAL/classcourse2.txt";
+            cout << "Searching classcourse2.txt" << endl;
+            break;
+    case 3: fileName = "FINAL/classcourse3.txt";
+            cout << "Searching classcourse3.txt" << endl;
+            break;
+    default: cout << "File selection is not valid, try different file." << endl;
+  }
+
+  int find;
+  
+  cout << endl;
+
+  cout << "Course ID List: " << endl;
+  for(int i = 0; i < COURSES; i++){
+    FILE_IN >> lessons[i];
+  
+  }
+  

@@ -1,0 +1,10 @@
+201  Math-2                4
+202  IT engineering-2      4
+203  Computer Science-2    4
+204  Biology-2             3
+205  Art-2                 3
+206  Nurse-2               3
+207  Physical Education-2  3
+208  Trigonometry-2        4
+209  English-2             4
+210  Spanish-2             4

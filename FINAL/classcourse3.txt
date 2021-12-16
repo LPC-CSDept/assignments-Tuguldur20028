@@ -1,0 +1,10 @@
+301  Math-3                4
+302  IT engineering-3      4
+303  Computer Science-3    4
+304  Biology-3             3
+305  Art-3                 3
+306  Nurse-3               3
+307  Physical Education-3  3
+308  Trigonometry-3        4
+309  English-3             4
+310  Spanish-3             4
