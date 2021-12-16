@@ -72,10 +72,87 @@ int main() {
   int find;
   
   cout << endl;
-
   cout << "Course ID List: " << endl;
   for(int i = 0; i < COURSES; i++){
     FILE_IN >> lessons[i];
   
+  }  bubbleSortbyID(lessons, COURSES);
+
+  for(int i = 0; i < COURSES; i++){
+    
+    cout << lessons[i].getID() << endl;
   }
+
+  cout << "Enter a ID number to get course details: ";
+  cin >> find;
   
+  int size = sizeof(lessons)/sizeof(lessons[0]);
+
+  Course result;
+
+  result = recursiveBinarySearch(find, lessons, 0, COURSES-1);
+  
+  cout << endl;
+  cout << "Recursive Search Found: " << endl;
+  cout << result;
+
+  cout << endl;
+  
+  result = iterativeBinarySearch(lessons,size-1,find);
+  cout << endl;
+  cout << "Iterative Search Found: " << endl;
+  cout << result;
+
+} 
+
+Course recursiveBinarySearch(int target, Course array[], int first, int last){
+  Course retry;
+
+  if(first > last)
+    return Course();
+  else{
+    int middle = (first + last) / 2;
+    if(target == array[middle].getID())
+      retry = array[middle];
+    else if (target < array[middle].getID())
+      retry = recursiveBinarySearch(target, array, first, middle - 1);
+    else 
+      retry = recursiveBinarySearch(target, array, middle + 1, last);
+  }  
+
+  return retry;
+}
+
+Course iterativeBinarySearch(Course array[], int N, int target){
+  bool found = false;
+  int first = 0;
+  int mid = 0;
+  int last = N;
+  Course result;
+
+  while(first <= last && !found){
+    mid = (first + last) / 2;
+    if(target > array[mid].getID())
+      first = mid + 1;
+    else if(target < array[mid].getID())
+      last = mid - 1;
+    else if(target == array[mid].getID()) {
+      found = true;
+      result = array[mid];
+    }
+  }
+  return result;
+}
+void bubbleSortbyID(Course array[], int N){
+  for(int i = 0; i < N; i++){
+    for(int q = 0; q < N; q++){
+      Course temp;
+      if(array[i].getID() < array[q].getID()){
+        temp = array[i];
+        array[i] = array[q];
+        array[q] = temp;
+      }
+    }
+  }
+};
+
